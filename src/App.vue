@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <router-view />
   </div>
 </template>
@@ -8,6 +9,7 @@
 * {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 #app {
@@ -31,3 +33,9 @@
   }
 }
 </style>
+<script>
+import Header from "./components/Header";
+export default {
+  components: { Header }
+};
+</script>

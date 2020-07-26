@@ -1,60 +1,66 @@
 <template>
-  <!-- ======= Hero Section ======= -->
-  <div id="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>
-          <vue-typer
-            caret-animation="expand"
-            erase-delay="70"
-            :text="textArray"
-            erase-style="backspace"
-          ></vue-typer>
-        </h1>
-        <p class="typed-items">
-          Web Developer,Graphic Designer, UI/UX designer, Software Tester
-        </p>
-        <!--
-                                                        <ul class="list-unstyled list-social">
-                                                          <li>
-                                                            <a href="#"><i class="ion-social-facebook"></i></a>
-                                                          </li>
-                                                          <li>
-                                                            <a href="#"><i class="ion-social-twitter"></i></a>
-                                                          </li>
-                                                          <li>
-                                                            <a href="#"><i class="ion-social-instagram"></i></a>
-                                                          </li>
-                                                          <li>
-                                                            <a href="#"><i class="ion-social-googleplus"></i></a>
-                                                          </li>
-                                                          <li>
-                                                            <a href="#"><i class="ion-social-tumblr"></i></a>
-                                                          </li>
-                                                          <li>
-                                                            <a href="#"><i class="ion-social-dribbble"></i></a>
-                                                          </li>
-                                                        </ul>
-                                                -->
+  <main>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>
+            <vue-typer
+              caret-animation="expand"
+              erase-delay="70"
+              :text="textArray"
+              erase-style="backspace"
+            ></vue-typer>
+          </h1>
+          <p>{{ headerDescription }}</p>
+          <social />
+          <a href="#about" class="btn-scroll scrollto" title="Scroll Down">
+            <ChevronDown size="50px" />
+          </a>
+        </div>
       </div>
-    </div>
-  </div>
-  <!-- End Hero -->
+    </section>
+    <!-- End Hero -->
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="holder">
+          <div v-for="n in 20" :key="n">About</div>
+        </div>
+      </div>
+    </section>
+    <!--End About -->
+
+    <!-- Resume -->
+    <section id="resume">
+      <div class="container">
+        <div v-for="n in 20" :key="n">Resume</div>
+      </div>
+    </section>
+    <!--Enf Resume -->
+  </main>
 </template>
 
 <script>
 import { VueTyper } from "vue-typer";
+import Social from "../components/Social";
+import ChevronDown from "mdi-vue/ChevronDown";
 
 export default {
   name: "Home",
   components: {
-    VueTyper
+    Social,
+    VueTyper,
+    ChevronDown
   },
   data: () => {
     return {
+      headerDescription:
+        "Web Developer,Graphic Designer, UI/UX designer, Software Tester",
       textArray: [
         "I'm Hossein Mirian",
-        "I'm a professional Front-End developer",
+        "I'm an expert Front-End developer",
         "I'm a UI/UX designer",
         "I'm a software tester"
       ]
@@ -67,6 +73,23 @@ export default {
   background: url("../assets/home-bg.jpg") repeat scroll center center/cover;
   height: 100vh;
   width: 100%;
+}
+
+#hero .btn-scroll {
+  position: fixed;
+  bottom: 10px;
+  left: 50vw;
+  transition: 0.4s;
+  color: rgba(255, 255, 255, 0.6);
+  animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+
+#hero .btn-scroll i {
+  font-size: 48px;
+}
+
+#hero .btn-scroll:hover {
+  color: #ffb727;
 }
 
 #hero .hero-content {
@@ -96,19 +119,35 @@ export default {
   font-weight: 500;
 }
 
-.hero-content .list-social li {
-  float: left;
-  margin-right: 20px;
-}
-
-.hero-content .list-social li i {
-  color: #fff;
-  font-size: 15px;
-}
-
 .vue-typer {
   font-family: monospace;
   background-color: white;
   opacity: 70%;
 }
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+  .holder{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 </style>

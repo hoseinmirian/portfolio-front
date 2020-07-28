@@ -2,14 +2,22 @@
   <!-- ======= Header ======= -->
   <header
     id="header"
-    class="fixed-top  d-flex justify-content-center align-items-center"
+    class="fixed-top header-scrolled d-flex justify-content-center align-items-center"
   >
     <nav class="nav-menu d-none d-lg-block">
       <ul>
-        <li class="active"><router-link to="/#">Home</router-link></li>
-        <li><router-link to="/resume">Resume</router-link></li>
-        <li><router-link to="/portfolio">Portfolio</router-link></li>
-        <li><router-link to="/contact">Contact</router-link></li>
+        <li class="active">
+          <router-link to="/#">Home</router-link>
+        </li>
+        <li>
+          <router-link to="/resume">Resume</router-link>
+        </li>
+        <li>
+          <router-link to="/portfolio">Portfolio</router-link>
+        </li>
+        <li>
+          <router-link to="/contact">Contact</router-link>
+        </li>
       </ul>
     </nav>
     <!-- .nav-menu -->
@@ -19,7 +27,7 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
 };
 </script>
 
@@ -28,14 +36,14 @@ export default {
   # Header
   --------------------------------------------------------------*/
 #header {
-  height: 80px;
-  transition: all 0.5s;
+  height: 50px;
   z-index: 997;
 }
 
-#header.header-scrolled {
-  background: rgba(25, 28, 31, 0.8);
-  height: 60px;
+.header-scrolled {
+  background: rgba(24, 24, 24, 0.8);
+  height: 50px;
+  transition: all 0.5s;
 }
 
 /*--------------------------------------------------------------

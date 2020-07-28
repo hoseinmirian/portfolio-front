@@ -6,16 +6,16 @@
         <div class="hero-content">
           <h1>
             <vue-typer
-                caret-animation="expand"
-                erase-delay="70"
-                :text="textArray"
-                erase-style="backspace"
+              caret-animation="expand"
+              :erase-delay="70"
+              :text="textArray"
+              erase-style="backspace"
             ></vue-typer>
           </h1>
           <p>{{ headerDescription }}</p>
-          <social/>
+          <social />
           <a href="#about" class="btn-scroll scrollto" title="Scroll Down">
-            <ChevronDown size="50px"/>
+            <ChevronDown size="50px" />
           </a>
         </div>
       </div>
@@ -39,20 +39,20 @@
             <div class="col-lg-6  ">
               <ul class="list-unstyled list-holder">
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Name:</strong> Hossein Mirian
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Nationality:</strong> Iran
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Email:</strong>
                   hosein.mirian@gmail.com
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">City:</strong> Oxford, UK
                 </li>
               </ul>
@@ -60,131 +60,73 @@
             <div class="col-lg-6  ">
               <ul class="list-unstyled list-holder">
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Age:</strong> 32
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Degree:</strong> Msc Advanced
                   Computer Science
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Freelance:</strong>
                   Available
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">City:</strong> Oxford, UK
+                  <ChevronRight class="chevron" />
+                  <strong style="color:black;">Years of experience:</strong> 12
+                  years
                 </li>
               </ul>
             </div>
           </div>
           <!-- Skills -->
-          <div class="section-title">
-            <span>My Skills</span>
-            <h2>My Skills</h2>
-            <p>
-              I am current University of Oxford Front-end developer/Researcher.
-              I have been working as software developer the past 12 years.I
-              graduated from Birmingham City University by achieving MSc
-              Advanced Computer Science degree. I am current University of
-              Oxford Front-end developer/Researcher. I have been working as
-              software developer the past 12 years.I graduated from Birmingham
-              City University by achieving MSc Advanced Computer Science degree.
-              I am current University of Oxford Front-end developer/Researcher.
-              I have been working as software developer the past 12 years.I
-              graduated from Birmingham City University by achieving MSc
-              Advanced Computer Science degree. I am current University of
-              Oxford Front-end developer/Researcher. I have been working as
-              software developer the past 12 years.I graduated from Birmingham
-              City University by achieving MSc Advanced Computer Science degree.
-            </p>
-          </div>
-          <div class="row">
-            <div class="col-lg-6  ">
-              <ul class="list-unstyled list-holder">
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Name:</strong> Hossein Mirian
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Nationality:</strong> Iran
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Email:</strong>
-                  hosein.mirian@gmail.com
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">City:</strong> Oxford, UK
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-6  ">
-              <ul class="list-unstyled list-holder">
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Age:</strong> 32
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Degree:</strong> Msc Advanced
-                  Computer Science
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Freelance:</strong>
-                  Available
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">City:</strong> Oxford, UK
-                </li>
-              </ul>
-            </div>
-          </div>
           <!--End Skills -->
         </div>
       </div>
     </section>
     <!--End About -->
 
-    <div id="paralex" class="container-fluid mt-5" style="background: #F5F5F5;height: 300px"></div>
-    <!-- anotherSec -->
+    <!-- Skills -->
+    <Skills />
+    <!--End Skills -->
+
+    <!--Paralex -->
+    <div
+      id="paralex"
+      class="container-fluid mt-5"
+      style="background: #F5F5F5;height: 300px"
+    ></div>
+    <!--ٍEnd of Paralex -->
+
+    <!-- Services -->
     <section id="anotherSec">
       <div class="container">
         <div class="holder">
           <div class="section-title">
-            <span>About Me</span>
-            <h2>About Me</h2>
-            <p>
-              I am current University of Oxford Front-end developer/Researcher.
-              I have been working as software developer the past 12 years.I
-              graduated from Birmingham City University by achieving MSc
-              Advanced Computer Science degree.
-            </p>
+            <span>Services</span>
+            <h2>Services</h2>
+            <p>Software consultancy, project implementation, etc</p>
           </div>
           <div class="row">
             <div class="col-lg-6  ">
               <ul class="list-unstyled list-holder">
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Name:</strong> Hossein Mirian
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Nationality:</strong> Iran
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Email:</strong>
                   hosein.mirian@gmail.com
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">City:</strong> Oxford, UK
                 </li>
               </ul>
@@ -192,110 +134,51 @@
             <div class="col-lg-6  ">
               <ul class="list-unstyled list-holder">
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Age:</strong> 32
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Degree:</strong> Msc Advanced
                   Computer Science
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
+                  <ChevronRight class="chevron" />
                   <strong style="color:black;">Freelance:</strong>
                   Available
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">City:</strong> Oxford, UK
+                  <ChevronRight class="chevron" />
+                  <strong style="color:black;">Years of experience:</strong>
+                  More than 12 years
                 </li>
               </ul>
             </div>
           </div>
-          <!-- Skills -->
-          <div class="section-title">
-            <span>My Skills</span>
-            <h2>My Skills</h2>
-            <p>
-              I am current University of Oxford Front-end developer/Researcher.
-              I have been working as software developer the past 12 years.I
-              graduated from Birmingham City University by achieving MSc
-              Advanced Computer Science degree. I am current University of
-              Oxford Front-end developer/Researcher. I have been working as
-              software developer the past 12 years.I graduated from Birmingham
-              City University by achieving MSc Advanced Computer Science degree.
-              I am current University of Oxford Front-end developer/Researcher.
-              I have been working as software developer the past 12 years.I
-              graduated from Birmingham City University by achieving MSc
-              Advanced Computer Science degree. I am current University of
-              Oxford Front-end developer/Researcher. I have been working as
-              software developer the past 12 years.I graduated from Birmingham
-              City University by achieving MSc Advanced Computer Science degree.
-            </p>
-          </div>
-          <div class="row">
-            <div class="col-lg-6  ">
-              <ul class="list-unstyled list-holder">
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Name:</strong> Hossein Mirian
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Nationality:</strong> Iran
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Email:</strong>
-                  hosein.mirian@gmail.com
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">City:</strong> Oxford, UK
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-6  ">
-              <ul class="list-unstyled list-holder">
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Age:</strong> 32
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Degree:</strong> Msc Advanced
-                  Computer Science
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Freelance:</strong>
-                  Available
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">City:</strong> Oxford, UK
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!--End Skills -->
         </div>
       </div>
     </section>
-    <!--End anotherSec -->
+    <!--End Services -->
 
+    <!--Footer -->
+    <MyFooter />
+    <!--End of Footer -->
   </main>
 </template>
 
 <script>
-import {VueTyper} from "vue-typer";
+import { VueTyper } from "vue-typer";
 import Social from "../components/Social";
 import ChevronDown from "mdi-vue/ChevronDown";
 import ChevronRight from "mdi-vue/ChevronRight";
+import Skills from "@/components/Skills";
+import MyFooter from "@/components/MyFooter";
 
 export default {
   name: "Home",
   components: {
+    MyFooter,
+    Skills,
     Social,
     VueTyper,
     ChevronDown,
@@ -304,7 +187,7 @@ export default {
   data: () => {
     return {
       headerDescription:
-          "Web Developer,Graphic Designer, UI/UX designer, Software Tester",
+        "Web Developer,Graphic Designer, UI/UX designer, Software Tester",
       textArray: [
         "I'm Hossein Mirian",
         "I'm an expert Front-End developer",
@@ -323,7 +206,7 @@ export default {
 }
 
 #hero .btn-scroll {
-  position: fixed;
+  position: absolute;
   bottom: 10px;
   left: 50vw;
   transition: 0.4s;

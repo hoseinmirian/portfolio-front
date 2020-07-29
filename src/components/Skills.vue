@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <section id="skills">
+  <div class="container m">
+    <section id="skills" >
       <!--  title  -->
       <div class="section-title">
-        <span>My Skills</span>
-        <h2>My Skills</h2>
+        <span class="pt-5">My Skills</span>
+        <h2 class="pt-5">My Skills</h2>
         <p>{{ skillsDescription }}</p>
       </div>
       <div class="skills-content" v-for="(skill, index) in skills" :key="index">
@@ -60,7 +60,12 @@ export default {
 
 <style scoped>
 /*---skills--*/
-#about {
+.container {
+  background-color: white;
+}
+
+#skills {
+  background-color: white;
   position: relative;
 }
 

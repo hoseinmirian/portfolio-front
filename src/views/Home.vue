@@ -6,16 +6,16 @@
         <div class="hero-content">
           <h1>
             <vue-typer
-              caret-animation="expand"
-              :erase-delay="70"
-              :text="textArray"
-              erase-style="backspace"
+                caret-animation="expand"
+                :erase-delay="70"
+                :text="textArray"
+                erase-style="backspace"
             ></vue-typer>
           </h1>
           <p>{{ headerDescription }}</p>
-          <social />
+          <social/>
           <a href="#about" class="btn-scroll scrollto" title="Scroll Down">
-            <ChevronDown size="50px" />
+            <ChevronDown size="50px"/>
           </a>
         </div>
       </div>
@@ -39,20 +39,20 @@
             <div class="col-lg-6  ">
               <ul class="list-unstyled list-holder">
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Name:</strong> Hossein Mirian
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Nationality:</strong> Iran
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Email:</strong>
                   hosein.mirian@gmail.com
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">City:</strong> Oxford, UK
                 </li>
               </ul>
@@ -60,21 +60,21 @@
             <div class="col-lg-6  ">
               <ul class="list-unstyled list-holder">
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Age:</strong> 32
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Degree:</strong> Msc Advanced
                   Computer Science
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Freelance:</strong>
                   Available
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Years of experience:</strong> 12
                   years
                 </li>
@@ -89,19 +89,21 @@
     <!--End About -->
 
     <!-- Skills -->
-    <Skills />
+    <div class="container-fluid pb-4" style="background-color: white">
+      <Skills/>
+    </div>
     <!--End Skills -->
 
     <!--Paralex -->
-    <div
-      id="paralex"
-      class="container-fluid mt-5"
-      style="background: #F5F5F5;height: 300px"
-    ></div>
+    <div  style="position: relative;height: 350px">
+      <parallax :parallax="true" :fixed="true">
+        <img src="@/assets/paralex2.jpg">
+      </parallax>
+    </div>
     <!--ٍEnd of Paralex -->
 
     <!-- Services -->
-    <section id="anotherSec">
+    <section id="anotherSec" style="background-color: white">
       <div class="container">
         <div class="holder">
           <div class="section-title">
@@ -113,20 +115,20 @@
             <div class="col-lg-6  ">
               <ul class="list-unstyled list-holder">
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Name:</strong> Hossein Mirian
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Nationality:</strong> Iran
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Email:</strong>
                   hosein.mirian@gmail.com
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">City:</strong> Oxford, UK
                 </li>
               </ul>
@@ -134,21 +136,21 @@
             <div class="col-lg-6  ">
               <ul class="list-unstyled list-holder">
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Age:</strong> 32
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Degree:</strong> Msc Advanced
                   Computer Science
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Freelance:</strong>
                   Available
                 </li>
                 <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron" />
+                  <ChevronRight class="chevron"/>
                   <strong style="color:black;">Years of experience:</strong>
                   More than 12 years
                 </li>
@@ -161,18 +163,19 @@
     <!--End Services -->
 
     <!--Footer -->
-    <MyFooter />
+    <MyFooter/>
     <!--End of Footer -->
   </main>
 </template>
 
 <script>
-import { VueTyper } from "vue-typer";
+import {VueTyper} from "vue-typer";
 import Social from "../components/Social";
 import ChevronDown from "mdi-vue/ChevronDown";
 import ChevronRight from "mdi-vue/ChevronRight";
 import Skills from "@/components/Skills";
 import MyFooter from "@/components/MyFooter";
+import Parallax from 'vue-parallaxy';
 
 export default {
   name: "Home",
@@ -182,12 +185,13 @@ export default {
     Social,
     VueTyper,
     ChevronDown,
-    ChevronRight
+    ChevronRight,
+    Parallax
   },
   data: () => {
     return {
       headerDescription:
-        "Web Developer,Graphic Designer, UI/UX designer, Software Tester",
+          "Web Developer,Graphic Designer, UI/UX designer, Software Tester",
       textArray: [
         "I'm Hossein Mirian",
         "I'm an expert Front-End developer",
@@ -282,6 +286,7 @@ export default {
 
 /*------------About---------------*/
 #about {
+  background-color: white;
   position: relative;
 }
 

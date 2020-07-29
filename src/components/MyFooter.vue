@@ -1,5 +1,5 @@
 <template>
-  <footer style="background-color: #F5F5F5;height: 100px" class="mt-5 ">
+  <footer style="background-color: #F5F5F5;height: 100px">
     <div class="container">
       <div class="row">
         <strong class="col-3" style="background-color: red"

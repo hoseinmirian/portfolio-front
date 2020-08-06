@@ -95,72 +95,16 @@
     <!--End Skills -->
 
     <!--Paralex -->
-    <div  style="position: relative;height: 350px">
+    <div style="position: relative;height: 350px">
       <parallax :parallax="true" :fixed="true">
-        <img src="@/assets/paralex2.jpg">
+        <img src="@/assets/paralex2.jpg"/>
       </parallax>
     </div>
     <!--ٍEnd of Paralex -->
 
-    <!-- Services -->
-    <section id="anotherSec" style="background-color: white">
-      <div class="container">
-        <div class="holder">
-          <div class="section-title">
-            <span>Services</span>
-            <h2>Services</h2>
-            <p>Software consultancy, project implementation, etc</p>
-          </div>
-          <div class="row">
-            <div class="col-lg-6  ">
-              <ul class="list-unstyled list-holder">
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Name:</strong> Hossein Mirian
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Nationality:</strong> Iran
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Email:</strong>
-                  hosein.mirian@gmail.com
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">City:</strong> Oxford, UK
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-6  ">
-              <ul class="list-unstyled list-holder">
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Age:</strong> 32
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Degree:</strong> Msc Advanced
-                  Computer Science
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Freelance:</strong>
-                  Available
-                </li>
-                <li class="arrow-holder mb-1">
-                  <ChevronRight class="chevron"/>
-                  <strong style="color:black;">Years of experience:</strong>
-                  More than 12 years
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--End Services -->
+    <!-- ======= My Services Section ======= -->
+    <Service/>
+    <!-- End My Services Section -->
 
     <!--Footer -->
     <MyFooter/>
@@ -175,11 +119,13 @@ import ChevronDown from "mdi-vue/ChevronDown";
 import ChevronRight from "mdi-vue/ChevronRight";
 import Skills from "@/components/Skills";
 import MyFooter from "@/components/MyFooter";
-import Parallax from 'vue-parallaxy';
+import Parallax from "vue-parallaxy";
+import Service from "@/components/Service";
 
 export default {
   name: "Home",
   components: {
+    Service,
     MyFooter,
     Skills,
     Social,

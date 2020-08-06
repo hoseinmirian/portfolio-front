@@ -2,7 +2,7 @@
   <ul class="list-unstyled list-social">
     <li v-for="(socialItem, index) in socialList" :key="index">
       <a :href="socialItem.link" target="_blank">
-        <component :is="socialItem.title" class="social-color"></component>
+        <component :is="socialItem.icon" class="social-color"></component>
       </a>
     </li>
   </ul>
@@ -25,10 +25,10 @@ export default {
   data: () => {
     return {
       socialList: [
-        { title: "Github", link: "https://www.github.com/hoseinmirian" },
-        { title: "Gitlab", link: "https://www.gitlab.com/hoseinmirian" },
-        { title: "Linkedin", link: "https://www.linkedin.com/hoseinmirian" },
-        { title: "Facebook", link: "https://www.facebook.com/hoseinmirian" }
+        { icon: "Github", link: "https://www.github.com/hoseinmirian" },
+        { icon: "Gitlab", link: "https://www.gitlab.com/hoseinmirian" },
+        { icon: "Linkedin", link: "https://www.linkedin.com/hoseinmirian" },
+        { icon: "Facebook", link: "https://www.facebook.com/hoseinmirian" }
       ]
     };
   }

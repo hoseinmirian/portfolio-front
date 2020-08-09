@@ -51,22 +51,25 @@ export default {
         {
           icon: "MaterialDesign",
           title: "UI/UX",
-          description: "designing UI/UX from scratch using Adobe XD"
+          description: "designing UI/UX from scratch using Adobe XD and Adobe Photoshop"
         },
         {
           icon: "VueJs",
-          title: "Vue js",
-          description: "developing the UI using VueJS and Vuex"
+          title: "Front-End Development",
+          description:
+            "developing the UI using VueJS and Vuex plus offering tested application using Jest and Vue utils"
         },
         {
           icon: "LanguageCss3",
-          title: "Styling",
-          description: "styling the UI using Sass and Less and css"
+          title: "Consulting",
+          description:
+            "consultancy over improving projects' quality by identifying the flaws and offer special package"
         },
         {
           icon: "Remote",
           title: "Remote Developing",
-          description: "Able to work on remote project world-wide"
+          description:
+            "Able to work remotely world-wide. Expert in working with git and testing"
         }
       ]
     };

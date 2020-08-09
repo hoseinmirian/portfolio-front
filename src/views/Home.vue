@@ -145,6 +145,9 @@ export default {
         "I'm a software tester"
       ]
     };
+  },
+  beforeDestroy() {
+    this.scrollToTop();
   }
 };
 </script>

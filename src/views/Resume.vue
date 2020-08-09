@@ -9,55 +9,71 @@
             <h2 class="pt-5">My Resume</h2>
           </div>
           <div class="row">
+            <!--     Summary & Education         -->
             <div class="col-lg-6">
-              <h3 class="resume-title">Sumary</h3>
-              <div class="resume-item pb-0">
-                <h4>Alice Barkley</h4>
-                <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+              <!--     Summary         -->
+              <h3 class="resume-title">Summary</h3>
+              <div class="resume-item">
+                <h4>{{ about.name }}</h4>
+                <p>
+                  <em>{{ about.summary }} </em>
+                </p>
                 <ul>
-                  <li>Portland par 127,Orlando, FL</li>
-                  <li>(123) 456-7891</li>
-                  <li>alice.barkley@example.com</li>
+                  <li>{{ about.address }}</li>
+                  <li>{{ about.phone }}</li>
+                  <li>{{ about.email }}</li>
                 </ul>
               </div>
 
+              <!--       Education       -->
               <h3 class="resume-title">Education</h3>
-              <div class="resume-item">
-                <h4>Master of Fine Arts &amp; Graphic Design</h4>
-                <h5>2015 - 2016</h5>
-                <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-              </div>
-              <div class="resume-item">
-                <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                <h5>2010 - 2014</h5>
-                <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
+              <div
+                class="resume-item"
+                v-for="(item, index) in education"
+                :key="item.certificateName + '_' + index"
+              >
+                <h4>{{ item.certificateName }}</h4>
+                <h5>{{ item.from }} - {{ item.to }}</h5>
+                <p>
+                  <em>{{ item.organisation }}</em>
+                </p>
+                <p>{{ item.description }}</p>
               </div>
             </div>
+
+            <!--     WorkExperience        -->
             <div class="col-lg-6">
               <h3 class="resume-title">Professional Experience</h3>
-              <div class="resume-item">
-                <h4>Senior graphic design specialist</h4>
-                <h5>2019 - Present</h5>
-                <p><em>Experion, New York, NY </em></p>
+              <div
+                class="resume-item"
+                v-for="(item, index) in resume"
+                :key="item.organisation + '_' + index"
+              >
+                <h4>{{ item.organisation }}</h4>
+                <h5>{{ item.from }} - {{ item.to }}</h5>
+                <p class="d-flex flex-column">
+                  <a :href="item.website" target="_blank"
+                    >{{ item.website }}
+                  </a>
+                  <em>{{ item.location }} </em>
+                </p>
+                <mark>{{ item.role }}</mark>
                 <ul>
-                  <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                  <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                  <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                  <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                  <li
+                    v-for="(bulletPoint, index) in item.bulletPoints"
+                    :key="bulletPoint + '_' + index"
+                  >
+                    {{ bulletPoint }}
+                  </li>
                 </ul>
-              </div>
-              <div class="resume-item">
-                <h4>Graphic design specialist</h4>
-                <h5>2017 - 2018</h5>
-                <p><em>Stepping Stone Advertising, New York, NY</em></p>
-                <ul>
-                  <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                  <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                  <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                  <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-                </ul>
+                <p id="techs">
+                  Technology Used:
+                  <b
+                    v-for="(tech, index) in item.techs"
+                    :key="tech + '_' + index"
+                    >{{ tech }}{{ index !== item.techs.length - 1 ? "," : "" }}
+                  </b>
+                </p>
               </div>
             </div>
           </div>
@@ -68,7 +84,78 @@
 </template>
 <script>
 export default {
-  name: "Resume"
+  name: "Resume",
+  data: () => {
+    return {
+      about: {
+        name: "Hossein Mirian",
+        summary:
+          "I am hossein Mirian. I was born in Isfahan,Iran. I started by graphic designing using Adobe Photoshop and gradually became " +
+          "interested in Adobe Flash and learned action script 2 and developed several flash applications. " +
+          "By learning Action Script I fell in love with programming and my story began! Currently I live in Oxford, UK.",
+        address: "Oxford,United Kingdom",
+        email: "hosein.mirian@gmail.com",
+        phone: "+44 7376799008"
+      },
+      education: [
+        {
+          certificateName: "MSc Advanced Computer Science",
+          from: "2017",
+          to: "2018",
+          organisation: "Birmingham City University, Birmingham,UK",
+          description:
+            "Passed modules about new cutting-edge techs such as data science, semantic web, service oriented programming,etc. Eventually, I achieved an MSc degree with a 2.1 GPA "
+        },
+        {
+          certificateName: "BA Computer Software",
+          from: "2012",
+          to: "2014",
+          organisation: "Kashan University, Iran",
+          description:
+            "Passed modules such as C, C++, Delphi, Data Structure and more.. "
+        }
+      ],
+      resume: [
+        {
+          organisation: "University of Oxford",
+          location: "Oxford, UK",
+          from: "2019",
+          to: "present",
+          role: "Front-End Developer / Researcher",
+          website: "https://eng.ox.ac.uk/people/hossein-mirian",
+          techs: ["vue", "vuex", "vuetify", "unit test", "javascript"],
+          bulletPoints: [
+            "Identified the client demands and tried catching up with the prior codes",
+            "Designed the new UI/UX using Adobe XD and Photoshop",
+            "Implemented the store using VueX for CRUD commands.",
+            "Created an integrated system using singleton classes to fetch data from APIs (GraphQL & Rest)",
+            "Design and created a robust UI using Vuetify framework"
+          ]
+        },
+        {
+          organisation: "Himart Startup",
+          location: "Tehran, Iran",
+          from: "2018",
+          to: "2019",
+          role: "Front-End Developer",
+          website: "https://himart.ir",
+          techs: [
+            "vue",
+            "vuex",
+            "material design",
+            "green socks",
+            "javascript"
+          ],
+          bulletPoints: [
+            "Identified the client demands and trying to catch up with the prior codes"
+          ]
+        }
+      ]
+    };
+  },
+  beforeDestroy() {
+    this.scrollToTop();
+  }
 };
 </script>
 <style scoped>
@@ -122,6 +209,10 @@ export default {
   margin-bottom: 0;
   position: relative;
   z-index: 2;
+}
+
+#techs b {
+  font-size: 1.1rem;
 }
 
 /*--------------------------------------------------------------

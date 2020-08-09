@@ -5,9 +5,10 @@ import router from "./router";
 import store from "./store";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { applicationMixin } from "./mixins/applicationMixin";
 
 Vue.config.productionTip = false;
-
+Vue.mixin(applicationMixin);
 new Vue({
   router,
   store,

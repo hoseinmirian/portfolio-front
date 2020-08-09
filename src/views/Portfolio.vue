@@ -7,6 +7,12 @@
 </template>
 <script>
 export default {
-  name: "Portfolio"
+  name: "Portfolio",
+  data: () => {
+    return {};
+  },
+  beforeDestroy() {
+    this.scrollToTop();
+  }
 };
 </script>

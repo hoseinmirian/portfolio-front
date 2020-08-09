@@ -51,7 +51,8 @@ export default {
         {
           icon: "MaterialDesign",
           title: "UI/UX",
-          description: "designing UI/UX from scratch using Adobe XD and Adobe Photoshop"
+          description:
+            "designing UI/UX from scratch using Adobe XD and Adobe Photoshop"
         },
         {
           icon: "VueJs",

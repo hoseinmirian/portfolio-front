@@ -23,6 +23,9 @@
       </div>
     </div>
     <div style="height: 20px"></div>
+    <p class="m-0 copy-right text-monospace">
+      All rights reserved by Hossein Mirian
+    </p>
   </footer>
 </template>
 
@@ -67,5 +70,10 @@ export default {
 
 .social-color:hover {
   color: #ffc85a;
+}
+
+.copy-right {
+  font-size: 0.8rem;
+  color: grey;
 }
 </style>

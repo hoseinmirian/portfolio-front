@@ -4,19 +4,16 @@
     id="header"
     class="fixed-top header-scrolled d-flex justify-content-center align-items-center"
   >
-    <nav class="nav-menu d-none d-lg-block">
+    <nav class="nav-menu  d-lg-block">
       <ul>
-        <li class="active">
-          <router-link to="/#">Home</router-link>
-        </li>
-        <li>
-          <router-link to="/resume">Resume</router-link>
-        </li>
-        <li>
-          <router-link to="/portfolio">Portfolio</router-link>
-        </li>
-        <li>
-          <router-link to="/contact">Contact</router-link>
+        <li
+          v-for="(button, index) in buttons"
+          :key="button.title + '_' + index"
+          :class="{ active: button.active }"
+        >
+          <router-link :to="button.link" @click.native="getActive(index)"
+            >{{ button.title }}
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -28,6 +25,31 @@
 <script>
 export default {
   name: "Header",
+  data: () => {
+    return {
+      buttons: [
+        { title: "Home", link: "/#", active: true },
+        { title: "Resume", link: "/resume", active: false },
+        { title: "Portfolio", link: "/portfolio", active: false },
+        { title: "Contact", link: "/contact", active: false }
+      ]
+    };
+  },
+  methods: {
+    getActive(index) {
+      this.buttons.map(button => (button.active = false));
+      this.buttons[index].active = true;
+    },
+    updateRoute(routeName) {
+      let activeButtonIndex = this.buttons.findIndex(
+        button => button.title === routeName
+      );
+      this.getActive(activeButtonIndex);
+    }
+  },
+  mounted() {
+    this.updateRoute(this.$route.name);
+  }
 };
 </script>
 

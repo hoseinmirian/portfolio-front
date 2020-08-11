@@ -6,49 +6,44 @@
           <div class="section-title">
             <span>Contact Me</span>
             <h2>Contact Me</h2>
-            <p>
-              Sit sint consectetur velit quisquam cupiditate impedit suscipit
-              alias
-            </p>
+            <p>{{ about.contactDescription }}</p>
           </div>
           <div class="row">
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-md-12">
                   <div class="info-box">
-                    <i class="bx bx-share-alt"></i>
-                    <h3>Social Profiles</h3>
+                    <ShareVariant class="bx bx-share-alt" />
+                    <h3 class="mt-3" style="margin-bottom: 34px">
+                      Social Profiles
+                    </h3>
                     <div class="social-links">
-                      <a href="#" class="twitter"
-                        ><i class="icofont-twitter"></i
-                      ></a>
-                      <a href="#" class="facebook"
-                        ><i class="icofont-facebook"></i
-                      ></a>
-                      <a href="#" class="instagram"
-                        ><i class="icofont-instagram"></i
-                      ></a>
-                      <a href="#" class="google-plus"
-                        ><i class="icofont-skype"></i
-                      ></a>
-                      <a href="#" class="linkedin"
-                        ><i class="icofont-linkedin"></i
-                      ></a>
+                      <a
+                        :href="socialItem.link"
+                        target="_blank"
+                        v-for="(socialItem, index) in socialList"
+                        :key="index"
+                      >
+                        <component
+                          :is="socialItem.icon"
+                          class="social-color"
+                        ></component>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="info-box mt-4">
-                    <i class="bx bx-envelope"></i>
-                    <h3>Email Me</h3>
-                    <p>contact@example.com</p>
+                    <Gmail class="bx bx-share-alt" />
+                    <h3 class="mt-3">Email Me</h3>
+                    <p>{{ about.email }}</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="info-box mt-4">
-                    <i class="bx bx-phone-call"></i>
-                    <h3>Call Me</h3>
-                    <p>+1 5589 55488 55</p>
+                    <Phone class="bx bx-share-alt" />
+                    <h3 class="mt-3">Call Me</h3>
+                    <p>{{ about.phone }}</p>
                   </div>
                 </div>
               </div>
@@ -129,10 +124,41 @@
   </main>
 </template>
 <script>
+import Github from "mdi-vue/Github";
+import Gitlab from "mdi-vue/Gitlab";
+import Linkedin from "mdi-vue/Linkedin";
+import Facebook from "mdi-vue/Facebook";
+import ShareVariant from "mdi-vue/ShareVariant";
+import Phone from "mdi-vue/Phone";
+import Gmail from "mdi-vue/Gmail";
+
 export default {
   name: "Contact",
+  components: {
+    Github,
+    Gitlab,
+    Linkedin,
+    Facebook,
+    ShareVariant,
+    Phone,
+    Gmail
+  },
   data: () => {
-    return {};
+    return {
+      about: {
+        email: "hosein.mirian@gmail.com",
+        phone: "+44 7376799008",
+        address: "Oxford,United Kingdom",
+        contactDescription:
+          "If you have any inquiry about kicking off a project, estimating price, business plan, and more, Please feel free to contact me through email social media "
+      },
+      socialList: [
+        { icon: "Github", link: "https://www.github.com/hoseinmirian" },
+        { icon: "Gitlab", link: "https://www.gitlab.com/hoseinmirian" },
+        { icon: "Linkedin", link: "https://www.linkedin.com/hoseinmirian" },
+        { icon: "Facebook", link: "https://www.facebook.com/hoseinmirian" }
+      ]
+    };
   },
   beforeDestroy() {
     this.scrollToTop();
@@ -201,7 +227,7 @@ export default {
   padding: 20px 0 30px 0;
 }
 
-.contact .info-box i.bx {
+.contact .info-box .bx {
   font-size: 24px;
   color: #ffb727;
   border-radius: 50%;
@@ -307,7 +333,6 @@ export default {
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  background-color: #ffb727;
 }
 
 .contact .php-email-form input {

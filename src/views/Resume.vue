@@ -174,7 +174,7 @@ export default {
 }
 
 .section-title {
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
   padding: 30px 0;
   position: relative;

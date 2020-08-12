@@ -8,6 +8,16 @@
             <span class="pt-5">My Resume</span>
             <h2 class="pt-5">My Resume</h2>
           </div>
+          <a :href="about.cvLink" target="_blank">
+            <button
+              style="width: 200px"
+              type="button"
+              class="btn btn-outline-warning mb-2  d-flex justify-content-between"
+            >
+              <Download />
+              <b>Download CV</b>
+            </button>
+          </a>
           <div class="row">
             <!--     Summary & Education         -->
             <div class="col-lg-6">
@@ -83,8 +93,13 @@
   </main>
 </template>
 <script>
+import Download from "mdi-vue/Download";
+
 export default {
   name: "Resume",
+  components: {
+    Download
+  },
   data: () => {
     return {
       about: {
@@ -95,7 +110,8 @@ export default {
           "By learning Action Script I fell in love with programming and my story began! Currently I live in Oxford, UK.",
         address: "Oxford,United Kingdom",
         email: "hosein.mirian@gmail.com",
-        phone: "+44 7376799008"
+        phone: "+44 7376799008",
+        cvLink: "http://hoseinmirian.com/cv/cv-mirian.pdf"
       },
       education: [
         {
@@ -273,5 +289,33 @@ export default {
   top: 0;
   background: #fff;
   border: 2px solid #82909c;
+}
+
+/*Download button*/
+.btn-outline-warning {
+  transition: background-color ease-in 0.4s;
+  border-radius: 10px 0 10px 0;
+  -webkit-border-radius: 10px 0 10px 0;
+  -moz-border-radius: 10px 0 10px 0;
+}
+
+.btn-outline-warning:hover {
+  color: white;
+}
+
+.btn-outline-warning.focus,
+.btn-outline-warning:focus {
+  box-shadow: 0 0 0 0 !important;
+}
+
+.btn-outline-warning:not(:disabled):not(.disabled).active,
+.btn-outline-warning:not(:disabled):not(.disabled):active,
+.show > .btn-outline-warning.dropdown-toggle {
+  color: white;
+  background-color: #ffb727;
+}
+
+a {
+  text-decoration: none !important;
 }
 </style>

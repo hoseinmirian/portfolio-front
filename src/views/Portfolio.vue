@@ -8,25 +8,73 @@
             <span class="pt-5">My Portfolio</span>
             <h2 class="pt-5">My Portfolio</h2>
           </div>
-          <div class="row mt-5">
+
+          <div
+            class="d-flex flex-column"
+            :class="isSmallScreen ? 'button-holder-sm' : 'button-holder'"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-warning mb-2  d-flex justify-content-between"
+              :class="{ active: tab.active }"
+              v-for="(tab, index) in tabList"
+              :key="tab.title + '_' + index"
+              @click="selectTab(index)"
+            >
+              <component :is="tab.icon" class="social-color"></component>
+              <span>{{ tab.title }}</span>
+            </button>
+          </div>
+
+          <div class="row mt-2">
             <!--Tabs-->
-            <div class="col-md-3 d-flex flex-column">
-              <button
-                type="button"
-                class="btn btn-outline-warning mb-2  d-flex justify-content-between"
-                :class="{ active: tab.active }"
-                v-for="(tab, index) in tabList"
-                :key="tab.title + '_' + index"
-                @click="selectTab(index)"
-              >
-                <component :is="tab.icon" class="social-color"></component>
-                <span>{{ tab.title }}</span>
-              </button>
-            </div>
+            <div class="col-md-4"></div>
             <!--end of Tabs-->
 
             <!--Content-->
-            <div class="col-md-9"></div>
+            <div class="col-sm-12 col-md-8">
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+              <div>asas</div>
+            </div>
             <!--end of Content-->
           </div>
           <!--Gallery-->
@@ -49,7 +97,11 @@ export default {
     Cellphone,
     Design
   },
-
+  computed: {
+    isSmallScreen() {
+      return window.innerWidth < 768;
+    }
+  },
   data: () => {
     return {
       tabList: [
@@ -142,5 +194,18 @@ export default {
 .show > .btn-outline-warning.dropdown-toggle {
   color: white;
   background-color: #ffb727;
+}
+
+.button-holder {
+  position: fixed;
+  width: 200px;
+  top: 35%;
+  z-index: 20;
+}
+
+.button-holder-sm {
+  position: relative;
+  width: 100%;
+  z-index: 20;
 }
 </style>

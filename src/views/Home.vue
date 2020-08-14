@@ -17,7 +17,7 @@
     <!--Paralex -->
     <div id="parallax-holder">
       <parallax :parallax="true" :fixed="true">
-        <img src="@/assets/paralex2.jpg" />
+        <img src="@/assets/paralex.jpg" />
       </parallax>
     </div>
     <!--ٍEnd of Paralex -->

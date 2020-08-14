@@ -8,7 +8,6 @@
             <span class="pt-5">My Portfolio</span>
             <h2 class="pt-5">My Portfolio</h2>
           </div>
-
           <div
             class="d-flex flex-column"
             :class="isSmallScreen ? 'button-holder-sm' : 'button-holder'"
@@ -33,51 +32,53 @@
 
             <!--Content-->
             <div class="col-sm-12 col-md-8">
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
-              <div>asas</div>
+              <div class="row">
+                <div class="col-12">
+                  <b-img-lazy
+                    v-bind="mainProps"
+                    :src="getImageUrl(80)"
+                    alt="Image 1"
+                  ></b-img-lazy>
+                  <b-img-lazy
+                    v-bind="mainProps"
+                    :src="getImageUrl(82)"
+                    alt="Image 2"
+                  ></b-img-lazy>
+                  <b-img-lazy
+                    v-bind="mainProps"
+                    :src="getImageUrl(84)"
+                    alt="Image 3"
+                  ></b-img-lazy>
+                  <b-img-lazy
+                    v-bind="mainProps"
+                    :src="getImageUrl(85)"
+                    alt="Image 4"
+                  ></b-img-lazy>
+                  <b-img-lazy
+                    v-bind="mainProps"
+                    :src="getImageUrl(88)"
+                    alt="Image 5"
+                  ></b-img-lazy>
+                  <b-img-lazy
+                    v-bind="mainProps"
+                    :src="getImageUrl(90)"
+                    alt="Image 6"
+                  ></b-img-lazy>
+                  <b-img-lazy
+                    v-bind="mainProps"
+                    :src="getImageUrl(92)"
+                    alt="Image 7"
+                  ></b-img-lazy>
+                  <b-img-lazy
+                    v-bind="mainProps"
+                    :src="getImageUrl(94)"
+                    alt="Image 8"
+                  ></b-img-lazy>
+                </div>
+              </div>
             </div>
             <!--end of Content-->
           </div>
-          <!--Gallery-->
         </div>
       </div>
     </section>
@@ -109,7 +110,16 @@ export default {
         { icon: "Web", title: "Web", active: false },
         { icon: "Cellphone", title: "Mobile", active: false },
         { icon: "Design", title: "Design", active: false }
-      ]
+      ],
+      mainProps: {
+        center: true,
+        fluidGrow: true,
+        blank: true,
+        blankSrc: `${require('@/assets/image-placeholder.gif')}`,
+        width: 600,
+        height: 400,
+        class: "my-5"
+      }
     };
   },
   methods: {
@@ -118,6 +128,10 @@ export default {
         tab.active = false;
       });
       this.tabList[tabIndex].active = true;
+    },
+    getImageUrl(imageId) {
+      const { width, height } = this.mainProps;
+      return `https://picsum.photos/${width}/${height}/?image=${imageId}`;
     }
   },
   beforeDestroy() {

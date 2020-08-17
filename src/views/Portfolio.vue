@@ -47,6 +47,7 @@
                     :source-code="item.sourceCode"
                     :description="item.description"
                     :techs="item.techs"
+                    :type="item.type"
                     class="mb-4"
                   />
                 </div>

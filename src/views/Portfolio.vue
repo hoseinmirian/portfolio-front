@@ -8,6 +8,7 @@
             <span class="pt-5">My Portfolio</span>
             <h2 class="pt-5">My Portfolio</h2>
           </div>
+          <!--  tabs  -->
           <div
             class="d-flex flex-column"
             :class="isSmallScreen ? 'button-holder-sm' : 'button-holder'"
@@ -18,62 +19,36 @@
               :class="{ active: tab.active }"
               v-for="(tab, index) in tabList"
               :key="tab.title + '_' + index"
-              @click="selectTab(index)"
+              @click="selectTab(tab.title)"
             >
               <component :is="tab.icon" class="social-color"></component>
-              <span>{{ tab.title }}</span>
+              <span>{{ tab.title }} ({{ portfolioLength[tab.title] }})</span>
             </button>
           </div>
+          <!--end of Tabs-->
 
           <div class="row mt-2">
-            <!--Tabs-->
             <div class="col-md-4"></div>
-            <!--end of Tabs-->
 
             <!--Content-->
             <div class="col-sm-12 col-md-8">
               <div class="row">
                 <div class="col-12">
-                  <b-img-lazy
-                    v-bind="mainProps"
-                    :src="getImageUrl(80)"
-                    alt="Image 1"
-                  ></b-img-lazy>
-                  <b-img-lazy
-                    v-bind="mainProps"
-                    :src="getImageUrl(82)"
-                    alt="Image 2"
-                  ></b-img-lazy>
-                  <b-img-lazy
-                    v-bind="mainProps"
-                    :src="getImageUrl(84)"
-                    alt="Image 3"
-                  ></b-img-lazy>
-                  <b-img-lazy
-                    v-bind="mainProps"
-                    :src="getImageUrl(85)"
-                    alt="Image 4"
-                  ></b-img-lazy>
-                  <b-img-lazy
-                    v-bind="mainProps"
-                    :src="getImageUrl(88)"
-                    alt="Image 5"
-                  ></b-img-lazy>
-                  <b-img-lazy
-                    v-bind="mainProps"
-                    :src="getImageUrl(90)"
-                    alt="Image 6"
-                  ></b-img-lazy>
-                  <b-img-lazy
-                    v-bind="mainProps"
-                    :src="getImageUrl(92)"
-                    alt="Image 7"
-                  ></b-img-lazy>
-                  <b-img-lazy
-                    v-bind="mainProps"
-                    :src="getImageUrl(94)"
-                    alt="Image 8"
-                  ></b-img-lazy>
+                  <PortfolioCard
+                    v-for="(item, index) in currentPortfolio"
+                    :key="item.title + '_' + index"
+                    :title="item.title"
+                    :main-props="mainProps"
+                    :img="item.img"
+                    :role="item.role"
+                    :organisation="item.organisation"
+                    :location="item.location"
+                    :website="item.website"
+                    :source-code="item.sourceCode"
+                    :description="item.description"
+                    :techs="item.techs"
+                    class="mb-4"
+                  />
                 </div>
               </div>
             </div>
@@ -89,10 +64,12 @@ import All from "mdi-vue/AllInclusive";
 import Web from "mdi-vue/Web";
 import Cellphone from "mdi-vue/Cellphone";
 import Design from "mdi-vue/Brush";
+import PortfolioCard from "@/components/PortfolioCard";
 
 export default {
   name: "Portfolio",
   components: {
+    PortfolioCard,
     All,
     Web,
     Cellphone,
@@ -105,6 +82,12 @@ export default {
   },
   data: () => {
     return {
+      portfolioLength: {
+        All: 0,
+        Web: 0,
+        Mobile: 0,
+        Design: 0
+      },
       tabList: [
         { icon: "All", title: "All", active: true },
         { icon: "Web", title: "Web", active: false },
@@ -115,24 +98,126 @@ export default {
         center: true,
         fluidGrow: true,
         blank: true,
-        blankSrc: `${require('@/assets/image-placeholder.gif')}`,
+        blankSrc: `${require("@/assets/image-placeholder.gif")}`,
         width: 600,
         height: 400,
-        class: "my-5"
-      }
+        class: "my-3"
+      },
+      portfolio: [
+        {
+          title: "FairSharing Rebuild",
+          type: "web",
+          img: "http://www.hoseinmirian.com/img/portfolio/img1_17082020.jpg",
+          organisation: "University of Oxford",
+          location: "Oxford, UK",
+          role: "Front-End Developer / Researcher",
+          website: "https://eng.ox.ac.uk/people/hossein-mirian",
+          sourceCode: "https://github.com/FAIRsharing/fairsharing.github.io",
+          techs: ["Vue", "Vuex", "Vuetify", "Unit Test", "JavaScript"],
+          description:
+            "FairSharing.org is a platform for standardizing world-wide researches, I along with other team members rebuilt the project from scratch using new techs such as vue,vuex and vuetify."
+        },
+        {
+          title: "Himart Startup",
+          type: "web",
+          img: "http://www.hoseinmirian.com/img/portfolio/img1_17082020.jpg",
+          organisation: "Mihan Food and Diary Co.",
+          location: "Oxford, UK",
+          role: "Front-End Developer",
+          website: "https://eng.ox.ac.uk/people/hossein-mirian",
+          sourceCode: "https://github.com/FAIRsharing/fairsharing.github.io",
+          techs: ["Vue", "Material Design", "javaScript"],
+          description: "description for Mihan project "
+        },
+        {
+          title: "CRM",
+          type: "mobile",
+          img: "http://www.hoseinmirian.com/img/portfolio/img1_17082020.jpg",
+          organisation: "Mihan Food and Diary Co.",
+          location: "Oxford, UK",
+          role: "Front-End Developer",
+          website: "https://eng.ox.ac.uk/people/hossein-mirian",
+          sourceCode: "https://github.com/FAIRsharing/fairsharing.github.io",
+          techs: ["Vue", "Material Design", "javaScript"],
+          description: "description for a mobile app."
+        },
+        {
+          title: "mobile project title 1",
+          type: "mobile",
+          img: "http://www.hoseinmirian.com/img/portfolio/img1_17082020.jpg",
+          organisation: "Mihan Food and Diary Co.",
+          location: "Oxford, UK",
+          role: "Front-End Developer",
+          website: "https://eng.ox.ac.uk/people/hossein-mirian",
+          sourceCode: "https://github.com/FAIRsharing/fairsharing.github.io",
+          techs: ["Vue", "Material Design", "javaScript"],
+          description: "description for a mobile app."
+        },
+        {
+          title: "mobile project title 2",
+          type: "mobile",
+          img: "http://www.hoseinmirian.com/img/portfolio/img1_17082020.jpg",
+          organisation: "Mihan Food and Diary Co.",
+          location: "Oxford, UK",
+          role: "Front-End Developer",
+          website: "https://eng.ox.ac.uk/people/hossein-mirian",
+          sourceCode: "https://github.com/FAIRsharing/fairsharing.github.io",
+          techs: ["Vue", "Material Design", "javaScript"],
+          description: "description for a mobile app."
+        },
+        {
+          title: "mobile project title 2",
+          type: "design",
+          img: "http://www.hoseinmirian.com/img/portfolio/img1_17082020.jpg",
+          organisation: "Mihan Food and Diary Co.",
+          location: "Oxford, UK",
+          role: "Front-End Developer",
+          website: "https://eng.ox.ac.uk/people/hossein-mirian",
+          sourceCode: "https://github.com/FAIRsharing/fairsharing.github.io",
+          techs: ["Vue", "Material Design", "javaScript"],
+          description: "description for a mobile app."
+        }
+      ],
+      currentPortfolio: []
     };
   },
   methods: {
-    selectTab(tabIndex) {
+    selectTab(tabTitle) {
       this.tabList.map(tab => {
         tab.active = false;
       });
-      this.tabList[tabIndex].active = true;
+      this.tabList.map(tab => {
+        if (tab.title === tabTitle) {
+          tab.active = true;
+        }
+      });
+      this.updateCard(tabTitle);
+      setTimeout(this.scrollToTop, 100);
     },
-    getImageUrl(imageId) {
-      const { width, height } = this.mainProps;
-      return `https://picsum.photos/${width}/${height}/?image=${imageId}`;
+    updateCard(tabTitle) {
+      if (tabTitle.toLowerCase() !== "all") {
+        this.currentPortfolio = this.portfolio.filter(
+          item => item.type === tabTitle.toString().toLowerCase()
+        );
+      } else {
+        this.currentPortfolio = this.portfolio;
+      }
+    },
+    setPortfolioLength() {
+      this.tabList.forEach(item => {
+        this.portfolio.forEach(port => {
+          if (item.title === "All") {
+            this.portfolioLength["All"] = this.portfolio.length;
+          } else if (port.type === item.title.toString().toLowerCase()) {
+            this.portfolioLength[item.title] += 1;
+          }
+        });
+      });
     }
+  },
+  mounted() {
+    this.updateCard("all");
+    this.setPortfolioLength();
   },
   beforeDestroy() {
     this.scrollToTop();

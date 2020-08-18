@@ -26,7 +26,7 @@
               <div class="resume-item">
                 <h4>{{ about.name }}</h4>
                 <p>
-                  <em>{{ about.summary }} </em>
+                  <em>{{ about.biography }} </em>
                 </p>
                 <ul>
                   <li>{{ about.address }}</li>
@@ -104,7 +104,7 @@ export default {
     return {
       about: {
         name: "Hossein Mirian",
-        summary:
+        biography:
           "I am hossein Mirian. I was born in Isfahan,Iran. I started by graphic designing using Adobe Photoshop and gradually became " +
           "interested in Adobe Flash and learned action script 2 and developed several flash applications. " +
           "By learning Action Script I fell in love with programming and my story began! Currently I live in Oxford, UK.",

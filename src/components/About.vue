@@ -69,6 +69,7 @@ export default {
     return {
       about: {
         name: "Hossein Mirian",
+        age: "32",
         fullSummary:
           "            I am current University of Oxford Front-end developer/Researcher. I\n" +
           "            have been working as software developer the past 12 years.I\n" +
